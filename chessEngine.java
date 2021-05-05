@@ -150,7 +150,12 @@ public class chessEngine {
 			
 			//Check to see if it's an actual piece
 			if (allowedPieces.contains(piece)) {
-				return piece + newPos.toString();
+				//BUG FIX: Adding the zero at the beginning.
+				if (newPos < 10) {
+					return piece + "0" + newPos.toString();
+				} else {
+					return piece + newPos.toString();
+				}
 			} else {
 				System.out.println(":O !!!!!!!!!!!!!!!!!!!!!!!!!!!!! :O");
 				System.out.println("Sorry, that piece  isn't recognised");
